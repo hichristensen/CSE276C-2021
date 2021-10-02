@@ -28,7 +28,7 @@
 \definecolor{veryLightGray}{rgb}{.9,.9,.9}
 \definecolor{greenApple}{rgb}{.3,.9,.3}
 
-\setbeamercolor{frametitle}{bg=CBlue}   
+\setbeamercolor{frametitle}{bg=CBlue}
 \setbeamercolor{title}{bg=CBlue}
 
 \usepackage{amsmath,amssymb,amsxtra,amsthm}
@@ -170,7 +170,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Polynominal approximation - getting help}
+  \frametitle{Polynomial approximation - getting help}
   \begin{itemize}
   \item We have a theorem:
     \begin{itemize}
@@ -181,16 +181,16 @@
       \[
         (-1)^i [ f(x_i) - p(x_i) ] = \epsilon ||f-p||_{\infty}
       \]
-      where $\epsilon = signum[f(x_0)-p(x_0)]$ 
+      where $\epsilon = signum[f(x_0)-p(x_0)]$
     \end{itemize}
-  \item By alternating signs at n+2 points the different between f and p is precicely equal to the $L_{\infty}$
+  \item By alternating signs at n+2 points the different between f and p is precisely equal to the $L_{\infty}$
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Putting theorem to work}
   \begin{itemize}
-  \item Can we use the theorem to build a strategy? 
+  \item Can we use the theorem to build a strategy?
   \item Lets consider $f(x) = e^x \mbox{ on } [-1, 1]$
   \item What would be the best 1st order approximation, i.e., $\pi_1$
     \centerline{\includegraphics[height=5cm]{figure_1}}
@@ -201,7 +201,7 @@
   \frametitle{Fitting the line}
   \begin{itemize}
   \item So we have three points
-  \item $x_0 = -1$, $x_1 = ? $ and $x_2 = 1$ 
+  \item $x_0 = -1$, $x_1 = ? $ and $x_2 = 1$
   \item at which the error is $f(x) = p(x)$
   \item So what  is $x_1$?
     \pause
@@ -213,7 +213,7 @@
         e(x_1) & = f(x_1) - p(x_1) &                 & = e^{x_1} - a + b x_1\\
         e(x_2) & = f(x_2) - p(x_2) & = f(1) - p(1)   & = e - a - b\\
       \end{array}
-    \]  
+    \]
   \item Given $e(x_0) = e(x_2)$
     \[
       \begin{array}{ccc}
@@ -231,14 +231,14 @@
   \item How do we find a? 
   \item The difference (positive / negative) should be symmetric
   \item The error function should at an extrema at $x_0, x_1, x_2$ but with alternate signs
-  \item $e(x) = f(x) - p(x) = e^x - a - b x$ so 
+  \item $e(x) = f(x) - p(x) = e^x - a - b x$ so
   \item $e'(x) = e^x - b$ $\Rightarrow$ $ e^{x_1} -b = 0$
   \item $x_1 = ln ~ b$
   \item $x_1 \approx 0.16144$ \pause
   \item $e(x_1) = -e(x_2)$ $\Rightarrow$ $e^{x_1} - a - b x_1 = -e + a + b$
   \item $a = \frac{e-b x_1}{2} \approx 1.2643$
   \item $p(x) \approx 1.2643 + 1.1752 x$
-  \item The maximum error would be $e(x_1) = ||f(x_1) - p(x_1)||_{\infty} \approx 0.2788$    
+  \item The maximum error would be $e(x_1) = ||f(x_1) - p(x_1)||_{\infty} \approx 0.2788$
   \end{itemize}
 \end{frame}
 
@@ -249,8 +249,8 @@
   \item What if we did not know the appropriate n?
   \item If we make n too small there is a lack of fit
   \item If we make n too large the fit will be poor (too much wiggle)
-  \item Could we estimate $d(f, \pi_n)$? 
-  \item Maybe not, but a lower bound might be possible    
+  \item Could we estimate $d(f, \pi_n)$?
+  \item Maybe not, but a lower bound might be possible
   \end{itemize}
 \end{frame}
 
@@ -301,15 +301,15 @@
   \frametitle{Estimating lower bound (cont.)}
     \[
       \begin{array}{rcl}
-        f[x_0, x_1, x_2] &=&  f[x_0, x_1, x_2] -  p[x_0, x_1, x_2]\\ 
-                         &=&  (f-p)[x_0, x_1, x_2]\\ 
+        f[x_0, x_1, x_2] &=&  f[x_0, x_1, x_2] -  p[x_0, x_1, x_2]\\
+                         &=&  (f-p)[x_0, x_1, x_2]\\
                          &=& \frac{f(x_0)-p(x_0)}{(x_0-x_1)(x_0-x_2)}+
                              \frac{f(x_1)-p(x_1)}{(x_1-x_0)(x_1-x_2)}+
                              \frac{f(x_2)-p(x_2)}{(x_2-x_0)(x_2-x_1)}\\
                          &=& \frac{f(x_0)-p(x_0)}{w'(x_0)}+
                              \frac{f(x_1)-p(x_1)}{w'(x_1)}+
                              \frac{f(x_2)-p(x_2)}{w'(x_2)}\\
-      \end{array}      
+      \end{array}
     \] where
     \[
       w'(x) = (x-x_0)(x-x_1)(x-x_2)
@@ -335,7 +335,7 @@
 \begin{frame}
   \frametitle{Back to our example}
   \begin{itemize}
-  \item Lets use $f(x) = e^x$ in the interval $[-1,1]$. 
+  \item Lets use $f(x) = e^x$ in the interval $[-1,1]$.
   \item Pick say -1, 0, 1 as our points
     \[
       f[x_0,x_1,x_2] = \frac{1}{2} f(-1) - f(0) + \frac{1}{2} f(1)
@@ -344,9 +344,9 @@
       \frac{1}{|w'(x_0)|} + \frac{1}{|w'(x_0)|} + \frac{1}{|w'(x_0)|} = \frac{1}{2} + 1 + \frac{1}{2} = 2
     \] thus
     \[
-      d(f,\pi_1) \geq \frac{f(-1) - 2 f(0) + f(1)}{4} 
+      d(f,\pi_1) \geq \frac{f(-1) - 2 f(0) + f(1)}{4}
     \]
-  \item the bound is then $d(f,\pi_1) = 0.2715$, which is not too far away from 0.2788 that was achieved. 
+  \item the bound is then $d(f,\pi_1) = 0.2715$, which is not too far away from 0.2788 that was achieved.
   \item the lower bounds says that we cannot estimate $e^x$ much
     better than .3 in the interval -1,1 with a linear approximation,
     which is very valuable.
@@ -368,7 +368,7 @@
       \begin{array}{rcl}
         T_0(x)     & = & 1\\
         T_1(x)     & = & x\\
-        T_2(x)     & = & 2 x^2 - 1 (\mbox{as } cos(2\theta) = 2cos^2(\theta) -1) \\ 
+        T_2(x)     & = & 2 x^2 - 1 (\mbox{as } cos(2\theta) = 2cos^2(\theta) -1) \\
         T_3(x)     & = & 4 x^3 - 3 x \\
         T_{N+1}(x)  & = & 2 x T_N(x) - T_{N-1}(x), \mbox{ for } n \geq 1\\
       \end{array}
@@ -415,7 +415,7 @@
       f(x) \approx p(x) = \left[ \sum_{k=1}^{N-1} c_k T_k(x) \right] - \frac{1}{2} c_0
     \]
   \item which is an exact match in terms of zero crossings
-  \item the errors are uniformly distributed over $[-1,1]$     
+  \item the errors are uniformly distributed over $[-1,1]$
   \end{itemize}
 \end{frame}
 
@@ -440,7 +440,7 @@
 \begin{frame}
   \frametitle{Truncated Power Series}
   \begin{itemize}
-  \item The uniform error of the Chebyshev functions/series imples
+  \item The uniform error of the Chebyshev functions/series implies
     that one can use a limited number of terms
   \item Say you have a series
     \[
@@ -469,7 +469,7 @@
   \item Frequently using a functional approximation is much more
     effective and it adds semantic information (a class) to the data
     approximation
-  \item The are quite a few functional approximaiton forms
+  \item The are quite a few functional approximation forms
   \item Giving a few examples from polynomial, $\pi_n$, form to periodic function
   \item A key consideration is what domain knowledge is available to guide model selection
   \end{itemize}
