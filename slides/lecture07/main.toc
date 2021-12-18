@@ -1,8 +1,0 @@
-\babel@toc {english}{}\relax 
-\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{ODE Introduction}{21}{0}{2}
-\beamer@sectionintoc {3}{Runge-Kutta}{25}{0}{3}
-\beamer@sectionintoc {4}{Richardson / Burlirsch-Stoer}{33}{0}{4}
-\beamer@sectionintoc {5}{Variable Dynamics}{39}{0}{5}
-\beamer@sectionintoc {6}{Partial Differential Equations}{41}{0}{6}
-\beamer@sectionintoc {7}{Summary}{45}{0}{7}
